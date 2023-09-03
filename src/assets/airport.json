@@ -1,0 +1,14 @@
+[
+  {
+    "code": "JFK",
+    "city": "New York"
+  },
+  {
+    "code": "LAX",
+    "city": "Los Angeles"
+  },
+  {
+    "code": "IST",
+    "city": "Istanbul"
+  }
+]

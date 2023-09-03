@@ -1,0 +1,135 @@
+<!-- <section class="book" id="book">
+  <div class="container">
+
+    <div class="main-text">
+      <h1><span>B</span>ook</h1>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-6 py-3 py-md-0">
+        <div class="card">
+          <img src="../../assets/images/book-img.png" alt="">
+        </div>
+      </div>
+
+      <div class="col-md-6 py-3 py-md-0">
+        <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+          <input type="text" class="form-control" placeholder="Kalkış Havaalanı" formControlName="departureAirport">
+          <input type="text" class="form-control" placeholder="Varış Havaalanı" formControlName="arrivalAirport">
+          <input type="date" class="form-control" placeholder="Kalkış Tarihi" formControlName="departureDate">
+          <input type="date" class="form-control" placeholder="Dönüş Tarihi" formControlName="returnDate">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" formControlName="oneWay">
+            <label class="form-check-label">Tek Yönlü Uçuş</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Ara</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div *ngIf="loading" class="text-center mt-3">
+  <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Yükleniyor...</span>
+  </div>
+</div> -->
+
+<!-- <div class="flight-list">
+  <div class="flight-item" *ngFor="let flight of flights">
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Uçuş Detayları</h5>
+        <p class="card-text">Kalkış Saati: {{ flight.departureDate }}</p>
+        <p class="card-text">Dönüş Saati: {{ flight.returnDate }}</p>
+        <p class="card-text">Uçuş Süresi: {{ flight.departureAirport }}</p>
+        <p class="card-text">Fiyat: {{ flight.arrivalAirport }} TL</p>
+      </div>
+    </div>
+  </div>
+</div> -->
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+  <div class="container">
+    <div class="main-text">
+      <h1><span>B</span>ook</h1>
+    </div>
+    <div class="row">
+      <div class="col-md-6 py-3 py-md-0">
+        <div class="card">
+          <img src="../../assets/images/book-img.jpg" alt="">
+        </div>
+      </div>
+      <div class="col-md-6 py-3 py-md-0">
+        <div class="booking-form-box">
+          <div class="radio-btn">
+            <input type="radio" class="btn" formControlName="tripType" value="roundtrip"><span>Roundtrip</span>
+            <input type="radio" class="btn" formControlName="tripType" value="oneWay"><span>One Way</span>
+            <input type="radio" class="btn" formControlName="tripType" value="multiCity"><span>Multi-City</span>
+          </div>
+          <div class="booking-form">
+            <div class="input-grp">
+              <label>Flying from</label>
+              <select class="custom-select" formControlName="departureAirport">
+                <option value="" disabled>Select an airport</option>
+                <option *ngFor="let airport of airports" [value]="airport.code">{{ airport.city }} - {{ airport.name }}</option>
+              </select>
+            </div>
+            <div class="input-grp">
+              <label>Flying To</label>
+              <select class="custom-select" formControlName="arrivalAirport">
+                <option value="" disabled>Select an airport</option>
+                <option *ngFor="let airport of airports" [value]="airport.code">{{ airport.city }} - {{ airport.name }}</option>
+              </select>
+            </div>
+            <div class="input-grp">
+              <label>Departing</label>
+              <input type="date" class="form-control select-date" formControlName="departureDate">
+            </div>
+            <div class="input-grp" [hidden]="bookForm.get('tripType')?.value !== 'roundtrip'">
+              <label>Returning</label>
+              <input type="date" class="form-control select-date" formControlName="returnDate">
+            </div>
+
+            <div class="input-grp">
+              <label>Adults</label>
+              <input type="number" class="form-control" value="1" formControlName="adults">
+            </div>
+            <div class="input-grp">
+              <label>Children</label>
+              <input type="number" class="form-control" value="0" formControlName="children">
+            </div>
+            <div class="input-grp">
+              <label>Travel Class</label>
+              <select class="custom-select" formControlName="travelClass">
+                <option value="1">Economy Class</option>
+                <option value="2">Business Class</option>
+              </select>
+            </div>
+            <div class="input-grp">
+              <button type="button" class="btn btn-primary flight" (click)="openPopup()">Show Flights</button>
+            </div>
+
+            <!-- Popup bileşeni (ngIf ile gizli) -->
+            <div *ngIf="showPopup">
+              <app-flight-results [flights]="flights" (close)="closePopup()"></app-flight-results>
+            </div>
+            <div class="flight-list">
+              <h2>Flight Results</h2>
+              <ul>
+                <li *ngFor="let flight of flights">
+                  <p>Departure Airport: {{ flight.departureAirport }}</p>
+                  <p>Arrival Airport: {{ flight.arrivalAirport }}</p>
+                  <p>Departure Date: {{ flight.departureDate }}</p>
+                  <!-- Diğer bilgileri burada görüntüleyebilirsiniz -->
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+

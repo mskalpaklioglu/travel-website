@@ -1,0 +1,15 @@
+<!-- flight-list.component.html -->
+
+<div *ngIf="loading" class="loading">Yükleniyor...</div>
+
+<ul>
+  <li *ngFor="let flight of flights">
+    {{ flight.departureTime }} - {{ flight.arrivalTime }} | {{ flight.duration }} dk | {{ flight.price }} TL
+  </li>
+</ul>
+
+<button (click)="sortFlightsByDepartureTime()">Kalkış Saati Sırala</button>
+
+<div *ngIf="loading" class="loading">
+  <app-loading></app-loading>
+</div>

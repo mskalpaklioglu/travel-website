@@ -1,0 +1,186 @@
+.book{
+  background: #f9f9f9;
+  padding: 50px;
+}
+.main-text h1{
+  text-align: center;
+  text-shadow: 0px 1px 1px black;
+  font-weight: 600;
+}
+.main-text h1 span{
+  color: #ffa500;
+}
+.book .card{
+  border-radius: 10px;
+  box-shadow: 0px 5px 5px -6px black;
+}
+.book .row{
+  margin-top: 30px;
+}
+.book form input{
+  padding: 10px;
+  color: black;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 5px -6px black;
+}
+.book form textarea{
+  border: none;
+  border-radius: 10px;
+  resize: none;
+  box-shadow: 0px 5px 5px -6px black;
+  height: 200px;
+}
+.book .submit{
+  width: 160px;
+  font-size: 16px;
+  font-weight: 550;
+  background: #ffa500;
+  color: white;
+  margin-top: 10px;
+  transition: 0.5s;
+}
+.book .submit:hover{
+  width: 170px;
+}
+@media (max-width:765px){
+  .book{
+      padding: 0;
+  }
+  .main-text h1{
+      padding: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+body{
+  background-image: linear-gradient(rgba(0,0,0,0.5,),rgba(0,0,0,0.5,));
+  background-size: cover;
+  background-position: center;
+}
+
+.booking-form-box{
+  max-width: 350px;
+  border: 1px solid #ced4da;
+  margin: 10% auto 0;
+}
+
+.radio-btn
+{
+  margin: 0 20px;
+}
+
+.radio-btn .btn{
+  margin: 20px 10px 20px 0;
+  box-shadow: none;
+}
+
+.radio-btn .btn::after{
+  content: '';
+  height: 15px;
+  width: 15px;
+  top: -2px;
+  left: -1px;
+  background-color: #fff;
+  position: relative;
+  display: inline-block;
+  border: 3px solid #ffa500;
+  visibility: visible;
+  border-radius: 50%;
+}
+.radio-btn .btn:checked::after{
+  content: '';
+  background-color: #000;
+  transition:0.5s;
+}
+
+.radio-btn span{
+  color: #000;
+  margin-right: 5px;
+  font-size: 12px;
+}
+
+
+.booking-form
+{
+  padding: 0 20px 20px;
+}
+
+.booking-form label{
+  margin-bottom: 5px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #000;
+}
+
+input::placeholder
+{
+  color: #000 !important;
+}
+
+.input-grp
+{
+  width: 151px;
+  display: inline-block;
+}
+
+.form-control
+{
+  font-size: 12px!important;
+  border-radius: 0!important;
+  color: #000!important;
+  background: transparent!important;
+  box-shadow: none!important;
+}
+
+.select-date::-webkit-inner-spin-button,
+.select-date::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.select-date::-webkit-calender-picker-indicator{
+  background: transparent!important;
+}
+
+.custom-select{
+  color: #000!important;
+  font-size: 12px!important;
+  border: 1px solid #000!important;
+  box-shadow: none!important;
+  border-radius: 0!important;
+  background: transparent!important;
+}
+
+.custom-select option{
+  color: #333;
+}
+.flight{
+  width: 100%;
+  padding:9px 0!important;
+  font-size: 12px!important;
+  border: 1px solid #000!important;
+  background: transparent!important;
+  box-shadow: none!important;
+  border-radius: 0!important;
+}
+.flight:hover
+{
+  background: #ffa500!important;
+  color: #000!important;
+  transition: 0.5s;
+}
+
+.btn-primary{
+  color: #000;
+}
