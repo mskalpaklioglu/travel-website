@@ -29,9 +29,9 @@ export class BookComponent implements OnInit, OnDestroy {
       departureDate: ['', Validators.required],
       returnDate: [''],
       oneWay: [false],
-      adults: [1],
-  children: [0],
-      tripType: ['roundtrip'] // tripType form kontrolünü ekleyin
+      adults: [1, Validators.required],
+      children: [0, Validators.required],
+      tripType: ['roundtrip', [Validators.required]]
     });
 
 
