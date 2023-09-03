@@ -1,0 +1,16 @@
+[
+  {
+    "flightNumber": "ABC123",
+    "departureAirport": "City A",
+    "arrivalAirport": "City B",
+    "departureDate": "2023-09-01",
+    "travelClass": "Economy Class"
+  },
+  {
+    "flightNumber": "XYZ789",
+    "departureAirport": "City C",
+    "arrivalAirport": "City D",
+    "departureDate": "2023-09-05",
+    "travelClass": "Business Class"
+  }
+]
